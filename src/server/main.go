@@ -18,6 +18,7 @@ func init() {
 }
  
 func main() {
+	init()
     startHttpServer()
 }
  
