@@ -30,7 +30,7 @@ func startHttpServer() {
 }
  
 func pool(w http.ResponseWriter, r *http.Request) {
-    rows, err := db.Query("SELECT * FROM user limit 1")
+    rows, err := db.Query("SELECT * FROM t_inventory_balance limit 1")
     defer rows.Close()
     checkErr(err)
  
