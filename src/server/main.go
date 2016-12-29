@@ -12,7 +12,7 @@ var db *sql.DB
  
 func init() {
     db, _ = sql.Open("mysql", "root:@tcp(172.18.22.202:3306)/apollo_eu_erp?charset=utf8")
-    db.SetMaxOpenConns(2000)
+    db.SetMaxOpenConns(200)
     db.SetMaxIdleConns(1000)
     db.Ping()
 }
