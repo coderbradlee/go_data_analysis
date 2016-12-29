@@ -40,23 +40,27 @@ func start(w http.ResponseWriter, r *http.Request) {
     for j := range values {
         scanArgs[j] = &values[j]
     }
- 
-    record := make(map[string]string)
+ 	records := make([]map[string]string)
+    
+ 	i:=0
     for rows.Next() {
         //将行数据保存到record字典
         err = rows.Scan(scanArgs...)
+        record := make(map[string]string)
         for i, col := range values {
             if col != nil {
                 record[columns[i]] = string(col.([]byte))
             }
         }
+        records[i]=record
+        i++
     }
- 	print(record)
+ 	print(records)
     // fmt.Println(record)
     fmt.Fprintln(w, "finish")
 }
-func print( record map[string]string) {
-	for i:=range record{
+func print( records []map[string]string) {
+	for i:=range records{
 		fmt.Println(i)
 	}
 }
