@@ -22,15 +22,15 @@ func main() {
 }
  
 func startHttpServer() {
-    http.HandleFunc("/pool", pool)
+    http.HandleFunc("/pool", start)
     err := http.ListenAndServe(":9090", nil)
     if err != nil {
         log.Fatal("ListenAndServe: ", err)
     }
 }
  
-func pool(w http.ResponseWriter, r *http.Request) {
-    rows, err := db.Query("SELECT * FROM t_inventory_balance limit 1")
+func start(w http.ResponseWriter, r *http.Request) {
+    rows, err := db.Query("SELECT company_id,accounting_period_id,item_master_id,in_stock_balance,uom_id,refresh_date FROM t_inventory_balance")
     defer rows.Close()
     checkErr(err)
  
