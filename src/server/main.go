@@ -11,7 +11,7 @@ import (
 var db *sql.DB
  
 func init() {
-    db, _ = sql.Open("mysql", "root:@tcp(172.18.22.202:3306)/apollo_eu_erp?charset=utf8")
+    db, _ = sql.Open("mysql", "renesola:renes0la.xx@tcp(172.18.22.202:3306)/apollo_eu_erp?charset=utf8")
     db.SetMaxOpenConns(20)
     db.SetMaxIdleConns(1000)
     db.Ping()
