@@ -51,11 +51,15 @@ func start(w http.ResponseWriter, r *http.Request) {
             }
         }
     }
- 
-    fmt.Println(record)
+ 	print(record)
+    // fmt.Println(record)
     fmt.Fprintln(w, "finish")
 }
- 
+func print( record map[string]string) {
+	for i:=range record{
+		fmt.Println(i)
+	}
+}
 func checkErr(err error) {
     if err != nil {
         fmt.Println(err)
