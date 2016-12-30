@@ -19,7 +19,7 @@ type inventory_balance struct {
 func (u *inventory_balance) print(){
 	fmt.Printf("%s||%s||%s||%d||%s||%s\n", u.company_id,u.accounting_period_id,u.item_master_id,u.in_stock_balance,u.uom_id,u.refresh_date)
 }
-func start(w http.ResponseWriter, r *http.Request) {
+func cost_start(w http.ResponseWriter, r *http.Request) {
     rows, err := db.Query("SELECT company_id,accounting_period_id,item_master_id,in_stock_balance,uom_id,refresh_date FROM t_inventory_balance")
     defer rows.Close()
     checkErr(err)

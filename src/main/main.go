@@ -22,7 +22,8 @@ func main() {
 }
  
 func startHttpServer() {
-    http.HandleFunc("/pool", start)
+    http.HandleFunc("/cost", cost_start)
+    http.HandleFunc("/credit", credit_start)
     err := http.ListenAndServe(":9090", nil)
     if err != nil {
         log.Fatal("ListenAndServe: ", err)
