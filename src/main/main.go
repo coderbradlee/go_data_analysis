@@ -9,6 +9,7 @@ import (
     "os"
     "encoding/json"
     "time"
+    "strings"
 )
 type Configuration struct {
     Exec_time string
