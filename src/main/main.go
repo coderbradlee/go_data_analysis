@@ -8,10 +8,9 @@ import (
     "net/http"
     "os"
     "encoding/json"
-    _"toml"
 )
 type Configuration struct {
-    exec_time []string
+    exec_time string
 }
 var db *sql.DB
 var configuration Configuration
@@ -28,7 +27,8 @@ func init() {
     if err != nil {
       fmt.Println("error:", err)
     }
-    fmt.Println(configuration.exec_time) // output: [UserA, UserB]
+    //fmt.Println(configuration.exec_time) // output: [UserA, UserB]
+    fmt.Printf("%s\n",configuration.exec_time)
 }
  
 func main() {
