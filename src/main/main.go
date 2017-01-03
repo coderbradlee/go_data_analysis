@@ -49,12 +49,11 @@ func main() {
                 fmt.Printf("its time\n")
                 request_credit()
                 }
-            }
         }
     }()
     startHttpServer()
 }
- func request_credit() {
+func request_credit() {
     port:=fmt.Sprintf("%s",configuration.Port)
     var endPoint string = "localhost:"+port+"/credit"
 
