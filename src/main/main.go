@@ -7,11 +7,12 @@ import (
     "log"
     "net/http"
 )
-var db *sql.DB
-var configuration
 type Configuration struct {
     exec_time    []string
 }
+var db *sql.DB
+var configuration Configuration
+
 func init() {
     db, _ = sql.Open("mysql", "renesola:renes0la.xx@tcp(172.18.22.202:3306)/apollo_eu_erp?charset=utf8")
     db.SetMaxOpenConns(20)
