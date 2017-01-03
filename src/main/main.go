@@ -10,6 +10,7 @@ import (
     "encoding/json"
     "time"
     "strings"
+    "ioutil"
 )
 type Configuration struct {
     Exec_time string
