@@ -47,6 +47,9 @@ func main() {
             if(strings.EqualFold(t_conf,t_now)){
                 fmt.Printf("its time\n")
             }
+            else{
+                fmt.Printf("not time\n")
+            }
         }
     }()
     startHttpServer()
