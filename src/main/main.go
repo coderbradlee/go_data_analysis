@@ -36,7 +36,13 @@ func main() {
     ticker := time.NewTicker(time.Minute * 1)
     go func() {
         for _ = range ticker.C {
-            fmt.Printf("ticked at %v", time.Now())
+            t:=time.Now()
+            // fmt.Printf("ticked at %v", time.Now())
+            // fmt.Printf("%02d:%02d\n",t.Hour(), t.Minute())
+            if(strings.EqualFold(configuration.Exec_time,fmt.Sprintf("%02d:%02d\n",t.Hour(), t.Minute()))
+            {
+                fmt.Printf("its time")
+            }
         }
     }()
     startHttpServer()
