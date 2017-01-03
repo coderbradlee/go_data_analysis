@@ -30,7 +30,7 @@ func init() {
       fmt.Println("error:", err)
     }
     //fmt.Println(configuration.exec_time) // output: [UserA, UserB]
-    fmt.Printf("%s\n",configuration.Exec_time)
+    //fmt.Printf("%s\n",configuration.Exec_time)
 }
  
 func main() {
@@ -45,7 +45,7 @@ func main() {
             fmt.Printf("%s\n",t_conf)
             fmt.Printf("%s\n",t_now)
             if(strings.EqualFold(t_conf,t_now)){
-                fmt.Printf("its time")
+                fmt.Printf("its time\n")
             }
         }
     }()
