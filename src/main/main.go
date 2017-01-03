@@ -46,8 +46,7 @@ func main() {
             fmt.Printf("%s\n",t_now)
             if(strings.EqualFold(t_conf,t_now)){
                 fmt.Printf("its time\n")
-            }
-            else{
+            }else{
                 fmt.Printf("not time\n")
             }
         }
