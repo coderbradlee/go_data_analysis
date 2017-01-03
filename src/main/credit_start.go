@@ -4,6 +4,8 @@ import (
     "fmt"
     _ "github.com/go-sql-driver/mysql"
     "net/http"
+    "encoding/json"
+    "os"
 )
 /**
  * 初步获取t_inventory_balance里面的数据
@@ -56,7 +58,7 @@ func credit_start(w http.ResponseWriter, r *http.Request) {
       bank_receipt_voucher_id,
       ar_accountant_id,
       balance,
-      transaction_date FROM t_customer_credit_flow`)
+      transaction_date FROM t_customer_credit_flow where`)
     defer rows.Close()
     checkErr(err)
  

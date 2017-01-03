@@ -1,4 +1,13 @@
+2017.01.03
 
+t_credit_black_list_detail 写入信用相关的表
+t_credit_black_list 写入信用相关的表
+customer_credit_flow 信用相关数据来源表
+
+信用相关的页面E:\renesola\svn\apollo\1.0\design\Demo\Newshop\WEB-INF\financialmanager
+
+
+////////////////////////////////////////////////////////////////////////////////
 2016.12.30
 t_cost_statistics 缺少类似t_purchase_cost的表，以下几个字段无法取得：
 total_stock_quantity int32
@@ -21,11 +30,11 @@ ab -c 100 -n 1000 'http://localhost:9090/pool'
 
 
 
-t_credit_black_list_detail
-t_credit_black_list
-t_cost_statistics
+t_credit_black_list_detail 写入信用相关的表
+t_credit_black_list 写入信用相关的表
 
-t_inventory_balance
-t_inventory_balance_detail
+
+t_inventory_balance 成本相关数据来源表
+t_inventory_balance_detail 成本相关数据来源表
 
 

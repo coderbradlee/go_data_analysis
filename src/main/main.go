@@ -9,14 +9,24 @@ import (
 )
  
 var db *sql.DB
- 
+var configuration
 func init() {
     db, _ = sql.Open("mysql", "renesola:renes0la.xx@tcp(172.18.22.202:3306)/apollo_eu_erp?charset=utf8")
     db.SetMaxOpenConns(20)
     db.SetMaxIdleConns(10)
     db.Ping()
+    file, _ := os.Open("conf.json")
+    decoder := json.NewDecoder(file)
+    configuration = Configuration{}
+    err := decoder.Decode(&configuration)
+    if err != nil {
+      fmt.Println("error:", err)
+    }
+    fmt.Println(configuration.exec_time) // output: [UserA, UserB]
 }
- 
+ type Configuration struct {
+    exec_time    []string
+    }
 func main() {
     startHttpServer()
 }
