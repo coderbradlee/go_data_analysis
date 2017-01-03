@@ -54,6 +54,7 @@ func main() {
     startHttpServer()
 }
 func request_credit() {
+    httpClient := &http.Client{}
     port:=fmt.Sprintf("%s",configuration.Port)
     var endPoint string = "localhost:"+port+"/credit"
 
