@@ -10,7 +10,7 @@ import (
     "encoding/json"
 )
 type Configuration struct {
-    exec_time string
+    Exec_time string
 }
 var db *sql.DB
 var configuration Configuration
@@ -28,7 +28,7 @@ func init() {
       fmt.Println("error:", err)
     }
     //fmt.Println(configuration.exec_time) // output: [UserA, UserB]
-    fmt.Printf("%s\n",configuration.exec_time)
+    fmt.Printf("%s\n",configuration.Exec_time)
 }
  
 func main() {
