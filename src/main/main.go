@@ -12,7 +12,7 @@ import (
     "strings"
 )
 type Configuration struct {
-    Exec_time string,
+    Exec_time string
     Port string
 }
 var db *sql.DB
