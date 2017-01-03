@@ -33,7 +33,7 @@ func init() {
 }
  
 func main() {
-    startHttpServer()
+    go startHttpServer()
 
     ticker := time.NewTicker(time.Minute * 1)
     go func() {
