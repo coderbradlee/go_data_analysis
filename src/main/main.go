@@ -42,7 +42,7 @@ func main() {
             // fmt.Printf("%02d:%02d\n",t.Hour(), t.Minute())
             t_conf:=fmt.Sprintf("%s",configuration.Exec_time)
             t_now:=fmt.Sprintf("%02d:%02d\n",t.Hour(), t.Minute())
-            if(strings.EqualFold(t_conf,t)){
+            if(strings.EqualFold(t_conf,t_now)){
                 fmt.Printf("its time")
             }
         }
