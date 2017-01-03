@@ -1,4 +1,6 @@
 2017.01.03
+go build -o src/main/go_data_analysis main 
+
 
 t_credit_black_list_detail 写入信用相关的表
 t_credit_black_list 写入信用相关的表
