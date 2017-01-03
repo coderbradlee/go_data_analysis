@@ -8,9 +8,10 @@ import (
     "net/http"
     "os"
     "encoding/json"
+    _"toml"
 )
 type Configuration struct {
-    exec_time    []string
+    exec_time []string
 }
 var db *sql.DB
 var configuration Configuration
