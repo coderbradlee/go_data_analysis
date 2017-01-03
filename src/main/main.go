@@ -8,6 +8,7 @@ import (
     "net/http"
     "os"
     "encoding/json"
+    "time"
 )
 type Configuration struct {
     Exec_time string
@@ -33,6 +34,13 @@ func init() {
  
 func main() {
     startHttpServer()
+
+    ticker := time.NewTicker(time.Minute * 1)
+    go func() {
+        for _ = range ticker.C {
+            fmt.Printf("ticked at %v", time.Now())
+        }
+    }()
 }
  
 func startHttpServer() {
