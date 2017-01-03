@@ -12,7 +12,8 @@ import (
     "strings"
 )
 type Configuration struct {
-    Exec_time string
+    Exec_time string,
+    Port string
 }
 var db *sql.DB
 var configuration Configuration
@@ -46,6 +47,36 @@ func main() {
             fmt.Printf("%s\n",t_now)
             if(strings.EqualFold(t_conf,t_now)){
                 fmt.Printf("its time\n")
+                go func() {
+                    port:=fmt.Sprintf("%s",configuration.Port)
+                    var endPoint string = "localhost:"+port+"/credit"
+
+                    req, err := http.NewRequest("GET", endPoint)
+                    if err != nil {
+                        log.Fatalf("Error Occured. %+v", err)
+                    }
+                    req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+                    // use httpClient to send request
+                    response, err := httpClient.Do(req)
+                    if err != nil && response == nil {
+                        log.Fatalf("Error sending request to API endpoint. %+v", err)
+                    } else {
+                        // Close the connection to reuse it
+                        defer response.Body.Close()
+
+                        // Let's check if the work actually is done
+                        // We have seen inconsistencies even when we get 200 OK response
+                        body, err := ioutil.ReadAll(response.Body)
+                        if err != nil {
+                            log.Fatalf("Couldn't parse response body. %+v", err)
+                        }
+
+                        log.Println("Response Body:", string(body))
+                    }
+
+                }
+                }
             }else{
                 fmt.Printf("not time\n")
             }
@@ -55,9 +86,10 @@ func main() {
 }
  
 func startHttpServer() {
+    port:=fmt.Sprintf("%s",configuration.Port)
     http.HandleFunc("/cost", cost_start)
     http.HandleFunc("/credit", credit_start)
-    err := http.ListenAndServe(":9090", nil)
+    err := http.ListenAndServe(port, nil)
     if err != nil {
         log.Fatal("ListenAndServe: ", err)
     }

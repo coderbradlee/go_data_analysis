@@ -56,7 +56,7 @@ func credit_start(w http.ResponseWriter, r *http.Request) {
       bank_receipt_voucher_id,
       ar_accountant_id,
       balance,
-      transaction_date FROM t_customer_credit_flow where`)
+      transaction_date FROM t_customer_credit_flow`)
     defer rows.Close()
     checkErr(err)
  
