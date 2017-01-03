@@ -40,8 +40,7 @@ func main() {
             // fmt.Printf("ticked at %v", time.Now())
             // fmt.Printf("%02d:%02d\n",t.Hour(), t.Minute())
             t_now:=fmt.Sprintf("%02d:%02d\n",t.Hour(), t.Minute())
-            if(strings.EqualFold(configuration.Exec_time,t)
-            {
+            if(strings.EqualFold(configuration.Exec_time,t)){
                 fmt.Printf("its time")
             }
         }
