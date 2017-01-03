@@ -2,10 +2,11 @@ package main
  
 import (
     "database/sql"
-    _"fmt"
+    "fmt"
     _ "github.com/go-sql-driver/mysql"
     "log"
     "net/http"
+    "os"
 )
 type Configuration struct {
     exec_time    []string
