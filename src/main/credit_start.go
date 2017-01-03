@@ -4,8 +4,6 @@ import (
     "fmt"
     _ "github.com/go-sql-driver/mysql"
     "net/http"
-    "encoding/json"
-    "os"
 )
 /**
  * 初步获取t_inventory_balance里面的数据
