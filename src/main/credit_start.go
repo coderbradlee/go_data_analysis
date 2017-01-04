@@ -40,10 +40,40 @@ type customer_credit_flow struct {
       balance float32
       transaction_date string
 }
+type commercial_invoice struct {
+       company_id string
+       invoice_no string
+       invoice_date string
+       sales_order_id string
+}
 func (u *customer_credit_flow) print(){
 	fmt.Printf("%s||%s||%s||%s\n", u.company_id,u.customer_master_id,u.currency_id,u.transaction_date)
 }
 func credit_start(w http.ResponseWriter, r *http.Request) {
+    rows, err := db.Query(`SELECT 
+       company_id
+       invoice_no
+       invoice_date
+       sales_order_id FROM t_commercial_invoice`)
+    defer rows.Close()
+    checkErr(err)
+ 
+    var records []*commercial_invoice
+    for rows.Next() {
+        p := new(commercial_invoice)
+        if err := rows.Scan(&p.company_id,
+          &p.invoice_no,
+          &p.invoice_date,
+          &p.sales_order_id); err != nil {
+            log.Println("sql error")
+        }
+        records = append(records, p)
+    }
+
+    print_flow(records)
+    fmt.Fprintln(w, "finish")
+}
+func credit_start1(w http.ResponseWriter, r *http.Request) {
     rows, err := db.Query(`SELECT 
       company_id,
       customer_master_id,
@@ -100,4 +130,8 @@ func print_flow( records []*customer_credit_flow) {
 		i.print()
 	}
 }
-
+func print_invoice( records []*commercial_invoice) {
+    for _,i:=range records{
+        i.print()
+    }
+}

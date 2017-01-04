@@ -21,9 +21,9 @@ type Configuration struct {
 }
 var db *sql.DB
 var configuration Configuration
-var (
-    logFileName string
-)
+// var (
+//     logFileName string
+// )
 func init() {
     db, _ = sql.Open("mysql", "renesola:renes0la.xx@tcp(172.18.22.202:3306)/apollo_eu_erp?charset=utf8")
     db.SetMaxOpenConns(20)
@@ -42,7 +42,7 @@ func init() {
 }
 func log_init() {
     log_name:=fmt.Sprintf("%s",configuration.Log_name)
-    logFileName = flag.String("log", log_name, "Log file name")
+    logFileName := flag.String("log", log_name, "Log file name")
     runtime.GOMAXPROCS(runtime.NumCPU())
     flag.Parse()
 
