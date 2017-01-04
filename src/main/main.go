@@ -57,7 +57,7 @@ func main() {
 func request_credit() {
     httpClient := &http.Client{}
     port:=fmt.Sprintf("%s",configuration.Port)
-    var endPoint string = "localhost:"+port+"/credit"
+    var endPoint string = "localhost"+port+"/credit"
 
     req, err := http.NewRequest("GET", endPoint, nil)
     if err != nil {
