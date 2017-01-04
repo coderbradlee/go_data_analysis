@@ -1,7 +1,7 @@
 {
     "port":":9090",
-    "exec_time": "09:24"
-
+    "exec_time": "09:40",
+    "log_name":"go.log"
 }
 
 // {
