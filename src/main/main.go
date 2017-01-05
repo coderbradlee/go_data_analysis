@@ -64,8 +64,8 @@ func main() {
             // fmt.Printf("%02d:%02d\n",t.Hour(), t.Minute())
             t_conf:=fmt.Sprintf("%s",configuration.Exec_time)
             t_now:=fmt.Sprintf("%02d:%02d",t.Hour(), t.Minute())
-            log.Printf("%s\n",t_conf)
-            log.Printf("%s\n",t_now)
+            // log.Printf("%s\n",t_conf)
+            // log.Printf("%s\n",t_now)
             if(strings.EqualFold(t_conf,t_now)){
                 log.Printf("its time\n")
                 request_credit()

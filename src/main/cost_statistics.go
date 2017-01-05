@@ -4,14 +4,38 @@ import (
     "fmt"
     _ "github.com/go-sql-driver/mysql"
     "math/rand"
+    // "crypto/rand"
     "time"
+    // "log"
+    // "math/big"
 )
 /**
  * copy inventory_balance data to cost_statistics struct
  */
+//  func rand_string(length int) string {
+//     token := ""
+//     codeAlphabet := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+//     codeAlphabet += "0123456789"
+
+//     for i := 0; i < length; i++ {
+//         token += string(codeAlphabet[cryptoRandSecure(int64(len(codeAlphabet)))])
+//     }
+//     return token
+// }
+
+// func cryptoRandSecure(max int64) int64 {
+//     // fmt.Println(time.Now().UnixNano())
+//     rand.Seed(time.Now().UnixNano())
+//     nBig, err := rand.Int(rand.Reader, big.NewInt(max))
+//     if err != nil {
+//         log.Println(err)
+//     }
+//     return nBig.Int64()
+// }
 func rand_string(lens int)string{
     choice:="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     var ret string
+    rand.Seed(time.Now().UnixNano())
     for i:=0;i<lens;i++{
         ret+=string(choice[rand.Intn(35)]);
     }
