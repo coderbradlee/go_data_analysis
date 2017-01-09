@@ -1,3 +1,9 @@
+
+E:/renesola/svn/apollo/1.0/design/Demo/ERP/WEB-INF/Inventory/index_fm.html
+信用和成本相关的页面
+E:/renesola/svn/apollo/1.0/design/Demo/ERP/WEB-INF/Inventory/index_om.html
+之前销售top10的页面
+
 2017.01.03
 go build -o src/main/go_data_analysis main 
 
