@@ -41,6 +41,9 @@ ab -c 100 -n 1000 'http://localhost:9090/pool'
 
 t_credit_black_list_detail 写入信用相关的表
 t_credit_black_list 写入信用相关的表
+t_cost_statistics 库存成本统计表
+t_sales_statistics 销售统计表
+t_sales_statistics_detail 销售统计明细表
 
 
 t_inventory_balance 成本相关数据来源表
