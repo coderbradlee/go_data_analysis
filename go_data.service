@@ -4,8 +4,8 @@ After=network.target remote-fs.target nss-lookup.target
 
 [Service]
 Type=simple
-ExecStart=/root/go_data_analysis/src
-WorkingDirectory=/root/go_data_analysis
+ExecStart=/root/go_data_analysis/src/go_data
+WorkingDirectory=/root/go_data_analysis/src
 PrivateTmp=true
 Restart=on-failure
 RestartSec=30
