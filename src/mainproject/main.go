@@ -29,7 +29,7 @@ func init() {
     db.SetMaxOpenConns(20)
     db.SetMaxIdleConns(10)
     db.Ping()
-    file, _ := os.Open("mainproject/conf.json")
+    file, _ := os.Open("src/mainproject/conf.json")
     decoder := json.NewDecoder(file)
     configuration = Configuration{}
     err := decoder.Decode(&configuration)
