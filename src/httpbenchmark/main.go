@@ -3,14 +3,12 @@ package main
 import (
     "database/sql"
     "fmt"
-    _ "github.com/go-sql-driver/mysql"
     "log"
     "net/http"
     "os"
     "encoding/json"
     "time"
     "strings"
-    "io/ioutil"
     "flag"
     "runtime"
 )
@@ -19,7 +17,7 @@ type Configuration struct {
     Port string
     Log_name string
 }
-
+var configuration Configuration
 func init() {
     file, _ := os.Open("src/mainproject/conf.json")
     decoder := json.NewDecoder(file)
