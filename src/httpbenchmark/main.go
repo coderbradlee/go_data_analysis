@@ -1,7 +1,6 @@
 package main
  
 import (
-    "database/sql"
     "fmt"
     "log"
     "net/http"
@@ -58,7 +57,6 @@ func main() {
             // log.Printf("%s\n",t_now)
             if(strings.EqualFold(t_conf,t_now)){
                 log.Printf("its time\n")
-                request_credit()
                 }
         }
     }()
