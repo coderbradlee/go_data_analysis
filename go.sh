@@ -1,2 +1,3 @@
 GOMAXPROCS=8
-go run src/httpbenchmark/main.go
+go build -o http_go httpbenchmark
+./http_go
